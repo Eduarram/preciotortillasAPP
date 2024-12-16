@@ -5,18 +5,18 @@ import geopandas as gpd
 import json
 import numpy as np
 
-########################################   Data Clening   ##########################################################################
+
+########################################   Data Cleaning   ##########################################################################
 
 # Archivos de datos
-data_path = "tortilla_prices.csv"
-geojson_path = "mexicoHigh.json"
-
+#data_path = "tortilla_prices.csv"
+#geojson_path = "mexicoHigh.json"
 # Cargar datos de precios
-tortilla = pd.read_csv(data_path, names=['State', 'City', 'year', 'Month', 'Day', 'Store type', 'Price per kilogram'], header=1)
+tortilla = pd.read_csv("tortilla_prices.csv", names=['State', 'City', 'year', 'Month', 'Day', 'Store type', 'Price per kilogram'], header=1)
 tortilla = tortilla.dropna()
 
 # Cargar datos del mapa
-gdf = gpd.read_file(geojson_path)
+gdf = gpd.read_file("mexicoHigh.json")
 gdf = gdf.sort_values(by='name', ascending=True)
 
 # Crear DataFrame `tortilla_state` agregando datos por estado y año
