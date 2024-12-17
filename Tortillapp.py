@@ -41,7 +41,7 @@ print(tortilla_state['state'])
 # Configurar sidebar para selección de año y tipo de valor
 st.title("Precio de las Tortillas en México del 2007 al 2024")
 selected_year = st.sidebar.selectbox("Seleccione el Año", tortilla_state['year'].unique())
-selected_value = st.sidebar.radio("Seleccione el Valor", ["max", "mean", "min"])
+selected_value = st.sidebar.radio("precio maximo, promedio o minimo", ["max", "mean", "min"])
 
 # Filtrar `tortilla_state` por el año seleccionado
 filtered_data = tortilla_state[tortilla_state['year'] == selected_year]
